@@ -16,6 +16,16 @@
 # limitations under the License.
 #
 
+BOARD_BOOT_HEADER_VERSION := 3
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+PRODUCT_SHIPPING_API_LEVEL := 30
+
+
+# Inherit from sm8350-common
+#$(call inherit-product, device/xiaomi/sm8350-common/lahaina.mk)
+
 LOCAL_PATH := device/xiaomi/venus
 
 # A/B

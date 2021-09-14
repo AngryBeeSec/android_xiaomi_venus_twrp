@@ -1,0 +1,4 @@
+git clone https://github.com/tanz3/vendor_xiaomi_sm8350-common device/xiaomi/sm8350-common/
+git clone https://github.com/LineageOS/android_hardware_qcom_bootctrl --branch lineage-18.1-caf hardware/qcom-caf/bootctrl
+git clone https://github.com/LineageOS/android_device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr
+git clone https://github.com/Demon000/device_xiaomi_sm8350-common.git device/xiaomi/sm8350-common/

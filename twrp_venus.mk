@@ -27,7 +27,7 @@ $(call inherit-product, device/xiaomi/venus/device.mk)
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
-#$(call inherit-product, vendor/twrp/config/gsm.mk)
+#$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := venus
@@ -36,3 +36,9 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := M2011K2C
 PRODUCT_MANUFACTURER := xiaomi
 PRODUCT_RELEASE_NAME := Xiaomi M2011K2C
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+#COMMENT OUT FOR DIRTY BOOT
+#Manifest
+#DEVICE_MANIFEST_FILE += device/xiaomi/sm8350-common/manifests/manifest_lahaina.xml

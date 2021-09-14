@@ -1,0 +1,1080 @@
+#
+# from device/xiaomi/sm8350_common/system.prop
+#
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+#
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+#
+#    * Neither the name of The Linux Foundation nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+#
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#
+# system.prop
+#
+
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+#rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+ro.telephony.default_network=22,22
+ro.telephony.default_cdma_sub=0
+
+# Dynamic MBN-Loading
+persist.vendor.radio.dynamic_load_mbn=3
+
+# mbn trace
+persist.vendor.radio.mbn_trace=true
+
+#set ims related prop
+#persist.dbg.volte_avail_ovr=1
+#persist.dbg.vt_avail_ovr=1
+persist.radio.VT_HYBRID_ENABLE=1
+
+#set dpm related prop
+persist.vendor.dpm.feature=1
+persist.vendor.dpm.nsrm.bkg.evt=3955
+
+#set RIJL video call related prop
+persist.radio.NO_STAPA=1
+
+# Report redirection call number
+persist.vendor.radio.redir_party_num=1
+
+#for special cdma card sms issue
+persist.vendor.radio.force_on_dc=true
+
+#disable strictmode
+persist.sys.strictmode.disable=true
+
+#set SAR feature
+persist.radio.dynamic_sar=false
+
+#Enable manual network selection function and distinguish 2G/3G/4G
+persist.vendor.radio.rat_on=combine
+
+
+#dsd prop
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.data_ltd_sys_ind=1
+
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+
+#ro.hdmi.enable=true
+#persist.speaker.prot.enable=false
+qcom.hw.aac.encoder=true
+#
+# system props for the cne module
+#
+persist.vendor.cne.feature=1
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+#13631487 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV XVID
+vendor.mm.enable.qcom_parser=63963135
+persist.mm.enable.prefetch=true
+
+#
+# system props for the data modules
+#
+ro.vendor.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+persist.vendor.data.mode=concurrent
+
+#system props for time-services
+persist.timed.enable=true
+
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report version 3
+# 196609 is decimal for 0x30001 to report version 3.1
+# 196610 is decimal for 0x30002 to report version 3.2
+ro.opengles.version=196610
+
+# system property for maximum number of HFP client connections
+bt.max.hfpclient.connections=1
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+
+#Simulate sdcard on /data/media
+#
+persist.fuse_sdcard=true
+
+#system prop for Bluetooth SOC type
+vendor.bluetooth.soc=hastings
+ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
+persist.vendor.bt.a2dp.mac_whitelist=false
+persist.vendor.btsatck.absvolfeature=true
+
+#system prop for wipower support
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.wipower=false
+
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+
+#system prop for RmNet Data
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=1
+##property to choose between virtual/external wfd display
+persist.sys.wfd.virtual=0
+
+# enable tunnel encoding for amrwb
+tunnel.audio.encode = true
+
+#Buffer size in kbytes for compress offload playback
+audio.offload.buffer.size.kb=32
+
+#Enable offload audio video playback by default
+av.offload.enable=true
+
+#enable voice path for PCM VoIP by default
+use.voice.path.for.pcm.voip=true
+
+# system prop for NFC DT
+ro.nfc.port=I2C
+
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
+
+#initialize QCA1530 detection
+sys.qca1530=detect
+
+#Enable stm events
+persist.debug.coresight.config=stm-events
+
+#hwui properties
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.path_cache_size=32
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=1024
+
+config.disable_rtt=true
+
+#Bringup properties
+persist.sys.force_sw_gles=1
+persist.vendor.radio.atfwd.start=true
+ro.kernel.qemu.gles=0
+qemu.hw.mainkeys=0
+
+persist.sys.gps.fence=true
+
+#Enable ULMK properties
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=15
+
+#Expose aux camera for below packages
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.runin,com.xiaomi.cameratest,com.xiaomi.factory.mmi
+
+# enable temp dds
+persist.vendor.radio.enable_temp_dds=true
+
+# shorten wait time for services exit to optimize shutdown time
+ro.build.shutdown_timeout=2
+
+# enable b-services aging propagation
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+#enable speed install
+ro.miui.pm.install.speedinstall=/data/apk-tmp
+
+# set thermal data path
+vendor.sys.thermal.data.path=/data/vendor/thermal/
+# end of device/xiaomi/sm8350_common/system.prop
+
+
+
+#SPECIAL_RO
+#
+#
+#
+# from device/xiaomi/venus/special_ro.prop
+#logd buffer size
+ro.logd.size=2M
+
+#support dual wifi feature
+ro.vendor.net.enable_dual_wifi=1
+
+#enable wifi passpoint r1
+ro.vendor.net.enable_passpoint_r1=1
+
+# For special ro override property 0: not support 1:nsa 2:sa 3: 1+2
+ro.vendor.radio.5g=3
+
+# support unlimited color temperature adjust
+ro.vendor.colorpick_adjust=true
+ro.vendor.all_modes.colorpick_adjust=true
+
+# System property for LTM
+ro.vendor.display.sensortype=2
+
+# prop for amoled panel
+ro.vendor.display.type=oled
+
+# displayfeature use poll to monitor backlight brightness
+ro.vendor.xiaomi.bl.poll=true
+
+# White Point Calibration
+ro.vendor.whitepoint_calibration_enable=false
+
+#Property for display feature histogram
+ro.vendor.histogram.enable=true
+
+# prop for displayfeture cabc/bcbc/dfps
+ro.vendor.cabc.enable=fasle
+ro.vendor.bcbc.enable=true
+ro.vendor.dfps.enable=false
+# Property for mi_setting and powerkeeper
+ro.vendor.fps.switch.default=true
+# prop for thermal dimming
+ro.vendor.thermal.dimming.enable=true
+
+#Property for GameColorPlus
+ro.vendor.gcp.enable=1
+
+#Property for Local HBM
+ro.vendor.localhbm.enable=true
+
+# for CTS fps
+ro.vendor.display.default_fps=60
+
+# prop for app copy during installation
+ro.miui.pm.install.buffer.size=49152
+
+#Property for display feature sre
+ro.vendor.sre.enable=true
+
+#Property for Mi factory calibration
+ro.vendor.display.mi_calib.enable=true
+
+# prop for software 12bit bl
+ro.vendor.soft_backlight.enable=true
+
+# sf support to change the size of FrameBuffer target
+ro.vendor.sf.enable_fb_scaling=1
+
+# hwc composer perf-hal
+vendor.display.enable_perf_hint_large_comp_cycle=1
+
+#Game color plus
+vendor.display.use_layer_ext=0
+
+# prop for video box ver 2.0
+ro.vendor.video_box.version=2
+
+# prop for autobrightness hbm
+ro.vendor.hbm_backlight.enable=true
+
+# Display Nature Mode
+ro.vendor.display.nature_mode.enable=true
+
+# AI Display
+ro.vendor.display.ai_disp.enable=true
+
+# Prop for notify active app
+ro.vendor.standard.video.enable=true
+#
+# from vendor/xiaomi/proprietary/slm/device/special_ro.prop
+
+# SLA
+ro.vendor.net.enable_sla=1
+
+#
+# from device/xiaomi/sm8350_common/common_ro.prop
+#
+# For common ro override property
+
+
+#
+# from device/xiaomi/sm8350_common/system.prop
+#
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+#
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+#
+#    * Neither the name of The Linux Foundation nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+#
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#
+# system.prop
+#
+
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+#rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+ro.telephony.default_network=22,22
+ro.telephony.default_cdma_sub=0
+
+# Dynamic MBN-Loading
+persist.vendor.radio.dynamic_load_mbn=3
+
+# mbn trace
+persist.vendor.radio.mbn_trace=true
+
+#set ims related prop
+#persist.dbg.volte_avail_ovr=1
+#persist.dbg.vt_avail_ovr=1
+persist.radio.VT_HYBRID_ENABLE=1
+
+#set dpm related prop
+persist.vendor.dpm.feature=1
+persist.vendor.dpm.nsrm.bkg.evt=3955
+
+#set RIJL video call related prop
+persist.radio.NO_STAPA=1
+
+# Report redirection call number
+persist.vendor.radio.redir_party_num=1
+
+#for special cdma card sms issue
+persist.vendor.radio.force_on_dc=true
+
+#disable strictmode
+persist.sys.strictmode.disable=true
+
+#set SAR feature
+persist.radio.dynamic_sar=false
+
+#Enable manual network selection function and distinguish 2G/3G/4G
+persist.vendor.radio.rat_on=combine
+
+
+#dsd prop
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.data_ltd_sys_ind=1
+
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+
+#ro.hdmi.enable=true
+#persist.speaker.prot.enable=false
+qcom.hw.aac.encoder=true
+#
+# system props for the cne module
+#
+persist.vendor.cne.feature=1
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+#13631487 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV XVID
+vendor.mm.enable.qcom_parser=63963135
+persist.mm.enable.prefetch=true
+
+#
+# system props for the data modules
+#
+ro.vendor.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+persist.vendor.data.mode=concurrent
+
+#system props for time-services
+persist.timed.enable=true
+
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report version 3
+# 196609 is decimal for 0x30001 to report version 3.1
+# 196610 is decimal for 0x30002 to report version 3.2
+ro.opengles.version=196610
+
+# system property for maximum number of HFP client connections
+bt.max.hfpclient.connections=1
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+
+#Simulate sdcard on /data/media
+#
+persist.fuse_sdcard=true
+
+#system prop for Bluetooth SOC type
+vendor.bluetooth.soc=hastings
+ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
+persist.vendor.bt.a2dp.mac_whitelist=false
+persist.vendor.btsatck.absvolfeature=true
+
+#system prop for wipower support
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.wipower=false
+
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+
+#system prop for RmNet Data
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=1
+##property to choose between virtual/external wfd display
+persist.sys.wfd.virtual=0
+
+# enable tunnel encoding for amrwb
+tunnel.audio.encode = true
+
+#Buffer size in kbytes for compress offload playback
+audio.offload.buffer.size.kb=32
+
+#Enable offload audio video playback by default
+av.offload.enable=true
+
+#enable voice path for PCM VoIP by default
+use.voice.path.for.pcm.voip=true
+
+# system prop for NFC DT
+ro.nfc.port=I2C
+
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
+
+#initialize QCA1530 detection
+sys.qca1530=detect
+
+#Enable stm events
+persist.debug.coresight.config=stm-events
+
+#hwui properties
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.path_cache_size=32
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=1024
+
+config.disable_rtt=true
+
+#Bringup properties
+persist.sys.force_sw_gles=1
+persist.vendor.radio.atfwd.start=true
+ro.kernel.qemu.gles=0
+qemu.hw.mainkeys=0
+
+persist.sys.gps.fence=true
+
+#Enable ULMK properties
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=15
+
+#Expose aux camera for below packages
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.runin,com.xiaomi.cameratest,com.xiaomi.factory.mmi
+
+# enable temp dds
+persist.vendor.radio.enable_temp_dds=true
+
+# shorten wait time for services exit to optimize shutdown time
+ro.build.shutdown_timeout=2
+
+# enable b-services aging propagation
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+#enable speed install
+ro.miui.pm.install.speedinstall=/data/apk-tmp
+
+# set thermal data path
+vendor.sys.thermal.data.path=/data/vendor/thermal/
+# end of device/xiaomi/sm8350_common/system.prop
+#
+# from device/xiaomi/sm8350_common/common_rw.prop
+#
+# For common rw override property
+
+#
+# from device/xiaomi/venus/special_rw.prop
+# set modem configuration
+#deprecated
+#persist.vendor.radio.5g_mode_pref=1
+#persist.vendor.radio.5g_mode_pref_0=1
+#persist.vendor.radio.5g_mode_pref_1=1
+
+#system property for displayfeature hidl
+sys.displayfeature_hidl=true
+#displayfeature and displayfeatureservice use it to debug pq effect
+sys.displayfeature.entry.enable=true
+
+#system prop for dc backlight
+persist.vendor.dc_backlight.enable=false
+persist.vendor.fod.modified.dc_status=false
+
+#property for dc backlight threshold
+persist.vendor.dc_backlight.threshold=440
+
+#quick charge type detect
+persist.vendor.quick.charge=1
+
+#enable manual network reject counter feature to count the number of indication instead of timer for LOCATION_UPDATE_REJECT
+persist.vendor.radio.manual_nw_rej_ct=1
+
+#property for display fps switch
+persist.vendor.dfps.level=60
+persist.vendor.power.dfps.level=0
+
+#enable ssr
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# sar sensor cali times limit
+persist.vendor.calisar.times=3
+
+#enable sar feature.
+persist.vendor.radio.dynamic_sar=1
+
+#enable wechat videocall beauty
+persist.vendor.vcb.ability=true
+persist.vendor.vcb.enable=false
+
+#enable lock gsm when connect usb
+persist.vendor.radio.ucdetect.usb=true
+ro.build.ab_update=true
+#
+# from device/xiaomi/venus/special_ro.prop
+#
+#logd buffer size
+ro.logd.size=2M
+
+#support dual wifi feature
+ro.vendor.net.enable_dual_wifi=1
+
+#enable wifi passpoint r1
+ro.vendor.net.enable_passpoint_r1=1
+
+# For special ro override property 0: not support 1:nsa 2:sa 3: 1+2
+ro.vendor.radio.5g=3
+
+# support unlimited color temperature adjust
+ro.vendor.colorpick_adjust=true
+ro.vendor.all_modes.colorpick_adjust=true
+
+# System property for LTM
+ro.vendor.display.sensortype=2
+
+# prop for amoled panel
+ro.vendor.display.type=oled
+
+# displayfeature use poll to monitor backlight brightness
+ro.vendor.xiaomi.bl.poll=true
+
+# White Point Calibration
+ro.vendor.whitepoint_calibration_enable=false
+
+#Property for display feature histogram
+ro.vendor.histogram.enable=true
+
+# prop for displayfeture cabc/bcbc/dfps
+ro.vendor.cabc.enable=fasle
+ro.vendor.bcbc.enable=true
+ro.vendor.dfps.enable=false
+# Property for mi_setting and powerkeeper
+ro.vendor.fps.switch.default=true
+# prop for thermal dimming
+ro.vendor.thermal.dimming.enable=true
+
+#Property for GameColorPlus
+ro.vendor.gcp.enable=1
+
+#Property for Local HBM
+ro.vendor.localhbm.enable=true
+
+# for CTS fps
+ro.vendor.display.default_fps=60
+
+# prop for app copy during installation
+ro.miui.pm.install.buffer.size=49152
+
+#Property for display feature sre
+ro.vendor.sre.enable=true
+
+#Property for Mi factory calibration
+ro.vendor.display.mi_calib.enable=true
+
+# prop for software 12bit bl
+ro.vendor.soft_backlight.enable=true
+
+# sf support to change the size of FrameBuffer target
+ro.vendor.sf.enable_fb_scaling=1
+
+# hwc composer perf-hal
+vendor.display.enable_perf_hint_large_comp_cycle=1
+
+#Game color plus
+vendor.display.use_layer_ext=0
+
+# prop for video box ver 2.0
+ro.vendor.video_box.version=2
+
+# prop for autobrightness hbm
+ro.vendor.hbm_backlight.enable=true
+
+# Display Nature Mode
+ro.vendor.display.nature_mode.enable=true
+
+# AI Display
+ro.vendor.display.ai_disp.enable=true
+
+# Prop for notify active app
+ro.vendor.standard.video.enable=true
+#
+# from vendor/xiaomi/proprietary/slm/device/special_ro.prop
+#
+
+# SLA
+ro.vendor.net.enable_sla=1
+
+#
+# from device/xiaomi/sm8350_common/common_ro.prop
+#
+# For common ro override property
+
+
+#
+# from device/xiaomi/sm8350_common/system.prop
+#
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+#
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+#
+#    * Neither the name of The Linux Foundation nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+#
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#
+# system.prop
+#
+
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+#rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+ro.telephony.default_network=22,22
+ro.telephony.default_cdma_sub=0
+
+# Dynamic MBN-Loading
+persist.vendor.radio.dynamic_load_mbn=3
+
+# mbn trace
+persist.vendor.radio.mbn_trace=true
+
+#set ims related prop
+#persist.dbg.volte_avail_ovr=1
+#persist.dbg.vt_avail_ovr=1
+persist.radio.VT_HYBRID_ENABLE=1
+
+#set dpm related prop
+persist.vendor.dpm.feature=1
+persist.vendor.dpm.nsrm.bkg.evt=3955
+
+#set RIJL video call related prop
+persist.radio.NO_STAPA=1
+
+# Report redirection call number
+persist.vendor.radio.redir_party_num=1
+
+#for special cdma card sms issue
+persist.vendor.radio.force_on_dc=true
+
+#disable strictmode
+persist.sys.strictmode.disable=true
+
+#set SAR feature
+persist.radio.dynamic_sar=false
+
+#Enable manual network selection function and distinguish 2G/3G/4G
+persist.vendor.radio.rat_on=combine
+
+
+#dsd prop
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.data_ltd_sys_ind=1
+
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+
+#ro.hdmi.enable=true
+#persist.speaker.prot.enable=false
+qcom.hw.aac.encoder=true
+#
+# system props for the cne module
+#
+persist.vendor.cne.feature=1
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+#13631487 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV XVID
+vendor.mm.enable.qcom_parser=63963135
+persist.mm.enable.prefetch=true
+
+#
+# system props for the data modules
+#
+ro.vendor.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+persist.vendor.data.mode=concurrent
+
+#system props for time-services
+persist.timed.enable=true
+
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report version 3
+# 196609 is decimal for 0x30001 to report version 3.1
+# 196610 is decimal for 0x30002 to report version 3.2
+ro.opengles.version=196610
+
+# system property for maximum number of HFP client connections
+bt.max.hfpclient.connections=1
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+
+#Simulate sdcard on /data/media
+#
+persist.fuse_sdcard=true
+
+#system prop for Bluetooth SOC type
+vendor.bluetooth.soc=hastings
+ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
+persist.vendor.bt.a2dp.mac_whitelist=false
+persist.vendor.btsatck.absvolfeature=true
+
+#system prop for wipower support
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.wipower=false
+
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+
+#system prop for RmNet Data
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=1
+##property to choose between virtual/external wfd display
+persist.sys.wfd.virtual=0
+
+# enable tunnel encoding for amrwb
+tunnel.audio.encode = true
+
+#Buffer size in kbytes for compress offload playback
+audio.offload.buffer.size.kb=32
+
+#Enable offload audio video playback by default
+av.offload.enable=true
+
+#enable voice path for PCM VoIP by default
+use.voice.path.for.pcm.voip=true
+
+# system prop for NFC DT
+ro.nfc.port=I2C
+
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
+
+#initialize QCA1530 detection
+sys.qca1530=detect
+
+#Enable stm events
+persist.debug.coresight.config=stm-events
+
+#hwui properties
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.path_cache_size=32
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=1024
+
+config.disable_rtt=true
+
+#Bringup properties
+persist.sys.force_sw_gles=1
+persist.vendor.radio.atfwd.start=true
+ro.kernel.qemu.gles=0
+qemu.hw.mainkeys=0
+
+persist.sys.gps.fence=true
+
+#Enable ULMK properties
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=15
+
+#Expose aux camera for below packages
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.runin,com.xiaomi.cameratest,com.xiaomi.factory.mmi
+
+# enable temp dds
+persist.vendor.radio.enable_temp_dds=true
+
+# shorten wait time for services exit to optimize shutdown time
+ro.build.shutdown_timeout=2
+
+# enable b-services aging propagation
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+#enable speed install
+ro.miui.pm.install.speedinstall=/data/apk-tmp
+
+# set thermal data path
+vendor.sys.thermal.data.path=/data/vendor/thermal/
+# end of device/xiaomi/sm8350_common/system.prop
+#
+# from device/xiaomi/sm8350_common/common_rw.prop
+#
+# For common rw override property
+
+#
+# from device/xiaomi/venus/special_rw.prop
+#
+# set modem configuration
+#deprecated
+#persist.vendor.radio.5g_mode_pref=1
+#persist.vendor.radio.5g_mode_pref_0=1
+#persist.vendor.radio.5g_mode_pref_1=1
+
+#system property for displayfeature hidl
+sys.displayfeature_hidl=true
+#displayfeature and displayfeatureservice use it to debug pq effect
+sys.displayfeature.entry.enable=true
+
+#system prop for dc backlight
+persist.vendor.dc_backlight.enable=false
+persist.vendor.fod.modified.dc_status=false
+
+#property for dc backlight threshold
+persist.vendor.dc_backlight.threshold=440
+
+#quick charge type detect
+persist.vendor.quick.charge=1
+
+#enable manual network reject counter feature to count the number of indication instead of timer for LOCATION_UPDATE_REJECT
+persist.vendor.radio.manual_nw_rej_ct=1
+
+#property for display fps switch
+persist.vendor.dfps.level=60
+persist.vendor.power.dfps.level=0
+
+#enable ssr
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# sar sensor cali times limit
+persist.vendor.calisar.times=3
+
+#enable sar feature.
+persist.vendor.radio.dynamic_sar=1
+
+#enable wechat videocall beauty
+persist.vendor.vcb.ability=true
+persist.vendor.vcb.enable=false
+
+#enable lock gsm when connect usb
+persist.vendor.radio.ucdetect.usb=true
