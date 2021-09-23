@@ -2,5 +2,5 @@ ro.vendor.use_data_netmgrd=true
 persist.vendor.data.mode=concurrent
 ro.crypto.volume.metadata.method=dm-default-key
 ro.product.first_api_level=30
-ro.product.board=star
+ro.product.board=venus
 ro.board.platform=lahaina
