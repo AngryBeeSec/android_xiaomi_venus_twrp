@@ -3,4 +3,3 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
         twrp_venus-eng \
-        twrp_venus-userdebug
