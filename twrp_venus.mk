@@ -1,7 +1,5 @@
 #
-# Copyright (C) 2020 The Android Open Source Project
 # Copyright (C) 2020 The TWRP Open Source Project
-# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,27 +16,17 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Inherit from venus device
 $(call inherit-product, device/xiaomi/venus/device.mk)
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
-#$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := venus
 PRODUCT_NAME := twrp_venus
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := M2011K2C
+PRODUCT_MODEL := Mi 11
 PRODUCT_MANUFACTURER := xiaomi
-PRODUCT_RELEASE_NAME := Xiaomi M2011K2C
-
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-#COMMENT OUT FOR DIRTY BOOT
-#Manifest
-#DEVICE_MANIFEST_FILE += device/xiaomi/sm8350-common/manifests/manifest_lahaina.xml
